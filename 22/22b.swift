@@ -142,8 +142,8 @@ for instruction in instructions {
                     let rotatedVectorIndex = mod(currentVectorIndex - rotations, 4)
                     let rotatedVector = directionVectors[rotatedVectorIndex]
                     let overflowIndex = (
-                        x: mod(indexRotatedCounterClockwise.x + rotatedVector.x, 4),
-                        y: mod(indexRotatedCounterClockwise.y + rotatedVector.y, 4)
+                        x: mod(indexRotatedCounterClockwise.x + rotatedVector.x, sideDimension),
+                        y: mod(indexRotatedCounterClockwise.y + rotatedVector.y, sideDimension)
                     )
                     let caveIndex = caveIndex(side: nextSide, index: overflowIndex)
                     if cave[caveIndex.y][caveIndex.x] == "#" {
